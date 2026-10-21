@@ -1,0 +1,98 @@
+########################################################################
+# radish-go 仓库统一 .gitignore
+# 适用：Go（gin-vue-admin/server、ride-hailing） + Vue（gin-vue-admin/web）
+########################################################################
+
+# ---------------------------------------------------------------- Go ---
+# 编译产物与可执行文件
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.out
+*.app
+*.test
+*.prof
+
+# go build 输出目录
+/bin/
+/ride-hailing/bin/
+/gin-vue-admin/server/bin/
+server.exe
+ride-hailing.exe
+
+# 覆盖率与测试产物
+*.coverprofile
+coverage.txt
+coverage.out
+coverage.html
+
+# Go 工作区（本地覆盖文件，各子项目独立 module，禁止提交根 go.work）
+go.work
+go.work.sum
+
+# vendor 目录（本项目统一使用 GOMODCACHE，不提交 vendor）
+vendor/
+
+# ------------------------------------------------------------ Node ---
+node_modules/
+.pnpm-store/
+.yarn/cache/
+.yarn/install-state.gz
+.npm
+.eslintcache
+*.tsbuildinfo
+
+# 前端构建产物
+dist/
+dist-ssr/
+build/
+*.local
+.vite/
+.cache/
+
+# ------------------------------------------------------- 前端编辑器 ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+.DS_Store
+Thumbs.db
+
+# ------------------------------------------------------------ 运行环境 ---
+# 本地环境变量（密钥、数据库密码等，严禁入库）
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+
+# 日志与临时文件
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+tmp/
+temp/
+
+# ------------------------------------------------------------ 本地配置 ---
+# 各子项目本地私有配置（线上模板仍保留）
+gin-vue-admin/server/config.local.yaml
+ride-hailing/configs/config.local.yaml
+docker-compose.override.yaml
+
+# ------------------------------------------------------------ 其他 ---
+# 数据库本地文件
+*.db
+*.sqlite
+*.sqlite3
